@@ -1,0 +1,29 @@
+<mat-toolbar class="mat-toolbarOne">
+<nav>
+  <a routerLink="/">
+    <button mat-fab color="warn"><mat-icon>home</mat-icon></button>
+  </a>
+</nav>
+  <div class="container-master">
+    <mat-toolbar class="mat-toolbarTwo" color="accent" >Calculator Welcome</mat-toolbar>
+      <mat-form-field class="container-inp" appearance="fill">
+        <mat-label>Digit a number</mat-label>
+        <input matInput placeholder="Ex:5" [(ngModel)]="n1" type="number">
+      </mat-form-field>
+      <mat-form-field class="container-inp" appearance="fill">
+        <mat-label>Digit other number</mat-label>
+        <input matInput placeholder="Ex:5" [(ngModel)]="n2" type="number">
+      </mat-form-field>
+    <section>
+      <button class="btn-btn" (click)="sum()" mat-raised-button color="accent">Sum</button>
+      <button class="btn-btn" (click)="sub()" mat-raised-button color="accent">Subtract</button>
+      <button class="btn-btn" (click)="multi()" mat-raised-button color="accent">Multiply</button>
+      <button class="btn-btn" (click)="div()" mat-raised-button color="accent">Divided</button>
+    </section>
+  </div>
+<footer>
+  <p *ngIf="n1 != false && n2 != false">
+    {{result}}
+  </p>
+</footer>
+</mat-toolbar>
